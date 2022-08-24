@@ -1,0 +1,10 @@
+{
+  "legacyEditor": false,
+  "livePreview": true,
+  "readableLineLength": false,
+  "strictLineBreaks": true,
+  "showLineNumber": false,
+  "vimMode": false,
+  "attachmentFolderPath": "附件",
+  "promptDelete": false
+}

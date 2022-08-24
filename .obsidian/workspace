@@ -1,0 +1,103 @@
+{
+  "main": {
+    "id": "818107cb0c44794f",
+    "type": "split",
+    "children": [
+      {
+        "id": "eec990e27c51116e",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "计算机网络/计算机网络.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2d49dcc4d367fe4e",
+    "type": "split",
+    "children": [
+      {
+        "id": "c86fda1285208550",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ddb4d9044450dd1f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "df34ef478b1c1abd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 250
+  },
+  "right": {
+    "id": "d09dc54e548debe9",
+    "type": "split",
+    "children": [
+      {
+        "id": "766b7acde4720a1a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b587be2a042a3fce",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "计算机网络/计算机网络.md",
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 186,
+    "collapsed": true
+  },
+  "active": "eec990e27c51116e",
+  "lastOpenFiles": [
+    "zzm.md",
+    "计算机网络/计算机网络.md",
+    "操作系统/操作系统.md",
+    "linux/linux.md",
+    "计算机网络/http.md",
+    "数据库/MySQL.md",
+    "云原生/Kubernetes.md",
+    "云原生/深入剖析Kubernetes.md",
+    "云原生/docker.md",
+    "自动化运维/Ansible.md"
+  ]
+}

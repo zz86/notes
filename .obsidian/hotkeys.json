@@ -1,0 +1,52 @@
+{
+  "editor:set-heading": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "1"
+    },
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "2"
+    },
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "3"
+    },
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "4"
+    },
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "5"
+    }
+  ],
+  "editor:toggle-numbered-list": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "O"
+    }
+  ],
+  "editor:toggle-bullet-list": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "U"
+    }
+  ]
+}
