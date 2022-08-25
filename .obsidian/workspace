@@ -7,12 +7,8 @@
         "id": "eec990e27c51116e",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "计算机网络/计算机网络.md",
-            "mode": "source",
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -69,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "计算机网络/计算机网络.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -87,10 +82,10 @@
     "width": 186,
     "collapsed": true
   },
-  "active": "eec990e27c51116e",
+  "active": "ddb4d9044450dd1f",
   "lastOpenFiles": [
-    "zzm.md",
     "计算机网络/计算机网络.md",
+    "zzm.md",
     "操作系统/操作系统.md",
     "linux/linux.md",
     "计算机网络/http.md",
