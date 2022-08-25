@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "计算机网络/计算机网络.md",
+            "file": "云计算/KVM.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "计算机网络/计算机网络.md",
+                "file": "云计算/KVM.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -90,9 +90,9 @@
   "active": "eec990e27c51116e",
   "lastOpenFiles": [
     "README.md",
+    "计算机组成原理/未命名.md",
+    "云计算/KVM.md",
     "计算机网络/计算机网络.md",
-    "未命名.md",
-    "math/导数.md",
     "zzm.md",
     "操作系统/操作系统.md",
     "linux/linux.md",
