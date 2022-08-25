@@ -7,8 +7,12 @@
         "id": "eec990e27c51116e",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "计算机网络/计算机网络.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -65,6 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "计算机网络/计算机网络.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -82,17 +87,17 @@
     "width": 186,
     "collapsed": true
   },
-  "active": "ddb4d9044450dd1f",
+  "active": "eec990e27c51116e",
   "lastOpenFiles": [
+    "README.md",
     "计算机网络/计算机网络.md",
+    "未命名.md",
+    "math/导数.md",
     "zzm.md",
     "操作系统/操作系统.md",
     "linux/linux.md",
     "计算机网络/http.md",
     "数据库/MySQL.md",
-    "云原生/Kubernetes.md",
-    "云原生/深入剖析Kubernetes.md",
-    "云原生/docker.md",
-    "自动化运维/Ansible.md"
+    "云原生/Kubernetes.md"
   ]
 }
