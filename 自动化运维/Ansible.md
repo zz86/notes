@@ -13,7 +13,6 @@ ansible PATTERN [-i inventory] -m module -a argument
 ```
 - pattern资产选择器
 - -i指定资产清单文件的位置
-- -m指定本次Ansible ad-hoc要执行的模块。可以类别成SHELL中的命
-- 令。
+- -m指定本次Ansible ad-hoc要执行的模块。可以类别成SHELL中的命令。
 - -a模块的参数.可以类比成SHELL中的命令参数
 
