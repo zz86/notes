@@ -107,7 +107,7 @@ int pid = clone(main_function, stack_size, CLONE_NEWPID | SIGCHLD, NULL);
 
 当然，我们还可以多次执行上面的 clone() 调用，这样就会创建多个 PID Namespace，而每个 Namespace 里的应用进程，都会认为自己是当前容器里的第 1 号进程，它们既看不到宿主机里真正的进程空间，也看不到其他 PID Namespace 里的具体情况。
 
-而**除了我们刚刚用到的 PID Namespace，Linux 操作系统还提供了 Mount、UTS、IPC、Network 和 User 这些 Namespace，用来对各种不同的进程上下文进行“障眼法”操作。**
+而**除了我们刚刚用到的 PID Namespace，Linux 操作系统还提供了 Mount、UTS、IPC、Network 、User、cgroup、time 这些 Namespace，用来对各种不同的进程上下文进行“障眼法”操作。**
 
 比如，Mount Namespace，用于让被隔离进程只看到当前 Namespace 里的挂载点信息；Network Namespace，用于让被隔离进程看到当前 Namespace 里的网络设备和配置。
 
@@ -138,6 +138,8 @@ int pid = clone(main_function, stack_size, CLONE_NEWPID | SIGCHLD, NULL);
 
 **Linux Cgroups 的全称是 Linux Control Group。它最主要的作用，就是限制一个进程组能够使用的资源上限，包括 CPU、内存、磁盘、网络带宽等等。**
 
+Cgroups 通过不同的子系统限制了不同的资源，每个子系统限制一种资源。每个子系统限 制资源的方式都是类似的，就是把相关的一组进程分配到一个控制组里，然后通过树结构 进行管理，每个控制组都设有自己的资源控制参数。
+
 此外，Cgroups 还能够对进程进行优先级设置、审计，以及将进程挂起和恢复等操作。
 
 除 CPU 子系统外，Cgroups 的每一项子系统都有其独有的资源限制能力，比如：
@@ -145,6 +147,7 @@ int pid = clone(main_function, stack_size, CLONE_NEWPID | SIGCHLD, NULL);
 -   blkio，为块设备设定I/O 限制，一般用于磁盘等设备；
 -   cpuset，为进程分配单独的 CPU 核和对应的内存节点；
 -   memory，为进程设定内存使用的限制。
+
 
 **Linux Cgroups 的设计还是比较易用的，简单粗暴地理解呢，它就是一个子系统目录加上一组资源限制文件的组合**。而对于 Docker 等 Linux 容器项目来说，它们只需要在每个子系统下面，为每个容器创建一个控制组（即创建一个新目录），然后在启动容器进程之后，把这个进程的 PID 填写到对应控制组的 tasks 文件中就可以了。
 
@@ -241,6 +244,9 @@ $ ls /var/lib/docker/aufs/diff/72b0744e06247c7d0...etc sbin usr var$ ls /var/lib
 
 ## 容器的“单进程模型”
 容器的“单进程模型”，并不是指容器里只能运行“一个”进程，而是指容器没有管理多个进程的能力。这是因为容器里 PID=1 的进程就是应用本身，其他的进程都是这个 PID=1 进程的子进程。可是，用户编写的应用，并不能够像正常操作系统里的 init 进程或者 systemd 那样拥有进程管理的功能。比如，你的应用是一个 Java Web 程序（PID=1），然后你执行 docker exec 在后台启动了一个 Nginx 进程（PID=3）。可是，当这个 Nginx 进程异常退出的时候，你该怎么知道呢？这个进程退出后的垃圾收集工作，又应该由谁去做呢？
+
+1. 在容器中，1 号进程永远不会响应 SIGKILL 和 SIGSTOP 这两个特权信号；
+2. 对于其他的信号，如果用户自己注册了 handler，1 号进程可以响应。
 
 ## 相比虚拟化技术的不足之处
 基于 Linux Namespace 的隔离机制相比于虚拟化技术也有很多不足之处，其中最主要的问题就是：**隔离得不彻底。**

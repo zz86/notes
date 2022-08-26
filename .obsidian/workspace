@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "云计算/KVM.md",
+            "file": "云原生/docker.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "云计算/KVM.md",
+                "file": "云原生/docker.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "eec990e27c51116e",
   "lastOpenFiles": [
+    "linux/linux.md",
+    "云原生/docker.md",
+    "云计算/KVM.md",
     "README.md",
     "计算机组成原理/未命名.md",
-    "云计算/KVM.md",
     "计算机网络/计算机网络.md",
     "zzm.md",
     "操作系统/操作系统.md",
-    "linux/linux.md",
     "计算机网络/http.md",
-    "数据库/MySQL.md",
-    "云原生/Kubernetes.md"
+    "数据库/MySQL.md"
   ]
 }
