@@ -87,6 +87,14 @@ ClusterIP 模式的 Service 为你提供的，就是一个 Pod 的稳定的 IP �
 
 所谓 Service，其实就是 Kubernetes 为 Pod 分配的、固定的、基于 iptables（或者 IPVS）的访问入口
 
+**Service 是由 kube-proxy 组件，加上 iptables 来共同实现的。**
+
+kube-proxy 通过 iptables 处理 Service 的过程，其实需要在宿主机上设置相当多的 iptables 规则。而且，kube-proxy 还需要在控制循环里不断地刷新这些规则来确保它们始终是正确的。
+
+不难想到，当你的宿主机上有大量 Pod 的时候，成百上千条 iptables 规则不断地被刷新，会大量占用该宿主机的 CPU 资源，甚至会让宿主机“卡”在这个过程中。所以说，**一直以来，基于 iptables 的 Service 实现，都是制约 Kubernetes 项目承载更多量级的 Pod 的主要障碍。**
+
+而 IPVS 模式的 Service，就是解决这个问题的一个行之有效的方法。
+
 ## StatefulSet
 StatefulSet 的设计其实非常容易理解。它把真实世界里的应用状态，抽象为了两种情况：
 
