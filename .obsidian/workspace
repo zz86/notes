@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "操作系统/操作系统.md",
+            "file": "计算机网络/IPtables.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "操作系统/操作系统.md",
+                "file": "计算机网络/IPtables.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "eec990e27c51116e",
   "lastOpenFiles": [
+    "linux/linux.md",
     "计算机网络/计算机网络.md",
+    "操作系统/操作系统.md",
     "计算机网络/FTP.md",
     "计算机网络/HTTP协议.md",
     "计算机网络/VPN.md",
     "计算机网络/IPtables.md",
     "云原生/docker.md",
-    "linux/linux.md",
     "自动化运维/Prometheus.md",
-    "自动化运维/Ansible.md",
-    "云计算/KVM.md"
+    "自动化运维/Ansible.md"
   ]
 }
