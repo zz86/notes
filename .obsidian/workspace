@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "计算机网络/计算机网络.md",
+            "file": "操作系统/操作系统.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "计算机网络/计算机网络.md",
+                "file": "操作系统/操作系统.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -89,8 +89,8 @@
   },
   "active": "eec990e27c51116e",
   "lastOpenFiles": [
-    "计算机网络/FTP.md",
     "计算机网络/计算机网络.md",
+    "计算机网络/FTP.md",
     "计算机网络/HTTP协议.md",
     "计算机网络/VPN.md",
     "计算机网络/IPtables.md",
