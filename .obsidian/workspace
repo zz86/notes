@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "计算机网络/IPtables.md",
+            "file": "计算机网络/RPC.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "计算机网络/IPtables.md",
+                "file": "计算机网络/RPC.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -87,17 +87,17 @@
     "width": 186,
     "collapsed": true
   },
-  "active": "eec990e27c51116e",
+  "active": "ddb4d9044450dd1f",
   "lastOpenFiles": [
+    "计算机网络/TCP、IP协议栈.md",
+    "中间件技术/中间件技术.md",
+    "中间件技术/消息队列.md",
+    "服务端&后端/nginx_web服务器.md",
+    "云原生/Kubernetes.md",
+    "计算机网络/IPtables.md",
     "linux/linux.md",
-    "计算机网络/计算机网络.md",
     "操作系统/操作系统.md",
     "计算机网络/FTP.md",
-    "计算机网络/HTTP协议.md",
-    "计算机网络/VPN.md",
-    "计算机网络/IPtables.md",
-    "云原生/docker.md",
-    "自动化运维/Prometheus.md",
-    "自动化运维/Ansible.md"
+    "计算机网络/HTTP.md"
   ]
 }
