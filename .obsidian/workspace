@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "计算机网络/HTTP.md",
+            "file": "操作系统/操作系统.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "计算机网络/HTTP.md",
+                "file": "操作系统/操作系统.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "eec990e27c51116e",
   "lastOpenFiles": [
+    "设计模式/设计模式.md",
+    "linux/linux.md",
+    "操作系统/操作系统.md",
+    "计算机网络/HTTP.md",
     "计算机网络/RPC.md",
     "计算机网络/TCP、IP协议栈.md",
     "中间件技术/中间件技术.md",
     "中间件技术/消息队列.md",
     "服务端&后端/nginx_web服务器.md",
-    "云原生/Kubernetes.md",
-    "计算机网络/IPtables.md",
-    "linux/linux.md",
-    "操作系统/操作系统.md",
-    "计算机网络/FTP.md"
+    "云原生/Kubernetes.md"
   ]
 }
