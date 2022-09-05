@@ -134,7 +134,7 @@ HTTP 2.0 虽然大大增加了并发性，但还是有问题的。因为 HTTP 2.
 ![[Pasted image 20220831192441.png]]
 ## 一个完整的HTTP包的格式：
 ![[Pasted image 20220831192530.png]]
-
+![[Pasted image 20220905101016.png]]
 
 
 

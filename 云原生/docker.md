@@ -84,6 +84,7 @@
 
 
 ## namespace 资源隔离
+![[Pasted image 20220905105822.png|700]]
 本来，每当我们在宿主机上运行了一个 /bin/sh 程序，操作系统都会给它分配一个进程编号，比如 PID=100。这个编号是进程的唯一标识，就像员工的工牌一样。所以 PID=100，可以粗略地理解为这个 /bin/sh 是我们公司里的第 100 号员工，而第 1 号员工就自然是比尔 · 盖茨这样统领全局的人物。
 
 而现在，我们要通过 Docker 把这个 /bin/sh 程序运行在一个容器当中。这时候，Docker 就会在这个第 100 号员工入职时给他施一个“障眼法”，让他永远看不到前面的其他 99 个员工，更看不到比尔 · 盖茨。这样，他就会错误地以为自己就是公司里的第 1 号员工。
@@ -136,6 +137,13 @@ int pid = clone(main_function, stack_size, CLONE_NEWPID | SIGCHLD, NULL);
 这时，这些进程就会觉得自己是各自 PID Namespace 里的第 1 号进程，只能看到各自 Mount Namespace 里挂载的目录和文件，只能访问到各自 Network Namespace 里的网络设备，就仿佛运行在一个个“容器”里面，与世隔绝。
 
 ## cgroups 资源限制
+![[Pasted image 20220905105855.png|700]]
+Cgrpups 包含几个核心概念，分别是 Task (任务)、Control Groups（控制组 ）、 subsystem（子系统）、hierarchy（层级数）。
+
+- Task: 任务，在 Cgroup 中，任务同样是一个进程。
+- Control Groups：控制组，Cgroups 的一组进程，并可以在这个 Cgroups 通过参 数，将一组进程和一组 linux subsystem 关联起来。 
+- subsystem：子系统，是一组资源控制模块，subsystem 作用于 hierarchy 的 Cgroup 节点，并控制节点中进程的资源占用。 
+- hierarchy：层级树 Cgroups，将 Cgroup 通过树状结构串起来，通过虚拟文件系统的 方式暴露给用户
 
 **Linux Cgroups 的全称是 Linux Control Group。它最主要的作用，就是限制一个进程组能够使用的资源上限，包括 CPU、内存、磁盘、网络带宽等等。**
 
