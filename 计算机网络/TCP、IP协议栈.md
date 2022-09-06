@@ -348,3 +348,35 @@ HTTP
 ![[Pasted image 20220905101422.png|600]]
 
 
+
+## TCP 连接的建立过程会受哪些配置项的影响？
+![[Pasted image 20220906103401.png|800]]
+TCP 连接的建立是一个从 Client 侧调用 connect()， 到 Server 侧 accept() 成功返回的过程。
+
+首先 Client 会给 Server 发送一个 SYN 包，但是该 SYN 包可能会在传输过程中丢失，或 者因为其他原因导致 Server 无法处理，此时 Client 这一侧就会触发超时重传机制。但是 也不能一直重传下去，重传的次数也是有限制的，这就是 tcp_syn_retries 这个配置项来决 定的。
+
+半连接，即收到了 SYN 后还没有回复 SYNACK 的连接，Server 每收到一个新的 SYN 包，都会创建一个半连接，然后把该半连接加入到半连接队列（syn queue）中。syn queue 的长度就是 tcp_max_syn_backlog 这个配置项来决定的，当系统中积压的半连接 个数超过了该值后，新的 SYN 包就会被丢弃。对于服务器而言，可能瞬间会有非常多的新 建连接，所以我们可以适当地调大该值，以免 SYN 包被丢弃而导致 Client 收不到 SYNACK。
+
+Server 中积压的半连接较多，也有可能是因为有些恶意的 Client 在进行 SYN Flood 攻 击。典型的 SYN Flood 攻击如下：Client 高频地向 Server 发 SYN 包，并且这个 SYN 包 的源 IP 地址不停地变换，那么 Server 每次接收到一个新的 SYN 后，都会给它分配一个半 连接，Server 的 SYNACK 根据之前的 SYN 包找到的是错误的 Client IP， 所以也就无法收到 Client 的 ACK 包，导致无法正确建立 TCP 连接，这就会让 Server 的半连接队列耗 尽，无法响应正常的 SYN 包。
+
+为了防止 SYN Flood 攻击，Linux 内核引入了 SYN Cookies 机制。
+
+在 Server 收到 SYN 包时，不去分配资源来保存 Client 的信息，而是根据这个 SYN 包计 算出一个 Cookie 值，然后将 Cookie 记录到 SYNACK 包中发送出去。对于正常的连接， 该 Cookies 值会随着 Client 的 ACK 报文被带回来。然后 Server 再根据这个 Cookie 检查 这个 ACK 包的合法性，如果合法，才去创建新的 TCP 连接。通过这种处理，SYN Cookies 可以防止部分 SYN Flood 攻击。所以对于 Linux 服务器而言，推荐开启 SYN Cookies
+
+Server 向 Client 发送的 SYNACK 包也可能会被丢弃，或者因为某些原因而收不到 Client 的响应，这个时候 Server 也会重传 SYNACK 包。同样地，重传的次数也是由配置选项来 控制的，该配置选项是 tcp_synack_retries。
+
+Client 在收到 Serve 的 SYNACK 包后，就会发出 ACK，Server 收到该 ACK 后，三次握 手就完成了，即产生了一个 TCP 全连接（complete），它会被添加到全连接队列 （accept queue）中。然后 Server 就会调用 accept() 来完成 TCP 连接的建立。
+
+但是，就像半连接队列（syn queue）的长度有限制一样，全连接队列（accept queue） 的长度也有限制，目的就是为了防止 Server 不能及时调用 accept() 而浪费太多的系统资源
+
+全连接队列（accept queue）的长度是由 listen(sockfd, backlog) 这个函数里的 backlog 控制的，而该 backlog 的最大值则是 somaxconn。somaxconn 在 5.4 之前的内核中， 默认都是 128（5.4 开始调整为了默认 4096），建议将该值适当调大一些
+
+当服务器中积压的全连接个数超过该值后，新的全连接就会被丢弃掉。Server 在将新连接 丢弃时，有的时候需要发送 reset 来通知 Client，这样 Client 就不会再次重试了。不过， 默认行为是直接丢弃不去通知 Client。至于是否需要给 Client 发送 reset，是由 tcp_abort_on_overflow 这个配置项来控制的，该值默认为 0，即不发送 reset 给 Client。推荐也是将该值配置为 0
+
+这是因为，Server 如果来不及 accept() 而导致全连接队列满，这往往是由瞬间有大量新建 连接请求导致的，正常情况下 Server 很快就能恢复，然后 Client 再次重试后就可以建连 成功了。也就是说，将 tcp_abort_on_overflow 配置为 0，给了 Client 一个重试的机会。 当然，你可以根据你的实际情况来决定是否要使能该选项。
+
+accept() 成功返回后，一个新的 TCP 连接就建立完成了，TCP 连接进入到了 ESTABLISHED 状态
+
+## TCP 连接的断开过程会受哪些配置项的影响？
+![[Pasted image 20220906103832.png|800]]
+首先调用 close() 的一侧是 active close（主动关闭）；而接收到对端的 FIN 包后再调用 close() 来关闭的一侧，称之为 passive close（被动关闭）。在四次挥手的过程中，有三 个 TCP 状态需要额外关注，就是上图中深红色的那三个状态：主动关闭方的 FIN_WAIT_2 和 TIME_WAIT，以及被动关闭方的 CLOSE_WAIT 状态。除了 CLOSE_WAIT 状态外，其 余两个状态都有对应的系统配置项来控制。
