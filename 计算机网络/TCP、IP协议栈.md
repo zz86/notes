@@ -384,3 +384,5 @@ accept() 成功返回后，一个新的 TCP 连接就建立完成了，TCP 连�
 ## TCP 连接的断开过程会受哪些配置项的影响？
 ![[Pasted image 20220906103832.png|800]]
 首先调用 close() 的一侧是 active close（主动关闭）；而接收到对端的 FIN 包后再调用 close() 来关闭的一侧，称之为 passive close（被动关闭）。在四次挥手的过程中，有三 个 TCP 状态需要额外关注，就是上图中深红色的那三个状态：主动关闭方的 FIN_WAIT_2 和 TIME_WAIT，以及被动关闭方的 CLOSE_WAIT 状态。除了 CLOSE_WAIT 状态外，其 余两个状态都有对应的系统配置项来控制。
+
+
