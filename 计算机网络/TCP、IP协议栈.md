@@ -8,7 +8,7 @@
 
 ## 网络协议
 ![[Pasted image 20220824164609.png|800]]
-![[Pasted image 20220901144104.png|700]]
+
 ![[Pasted image 20220901144125.png|900]]
 
 
