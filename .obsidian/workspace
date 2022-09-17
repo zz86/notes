@@ -1,10 +1,10 @@
 {
   "main": {
-    "id": "bb6994cc04176b72",
+    "id": "818107cb0c44794f",
     "type": "split",
     "children": [
       {
-        "id": "783d15737b426081",
+        "id": "eec990e27c51116e",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -19,15 +19,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "cff27742a852ef7f",
+    "id": "2d49dcc4d367fe4e",
     "type": "split",
     "children": [
       {
-        "id": "12c5ab486da109c9",
+        "id": "c86fda1285208550",
         "type": "tabs",
         "children": [
           {
-            "id": "2535a6cf66ff7d71",
+            "id": "ddb4d9044450dd1f",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -35,7 +35,7 @@
             }
           },
           {
-            "id": "0255440142f37001",
+            "id": "df34ef478b1c1abd",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -53,29 +53,29 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 250
   },
   "right": {
-    "id": "318b2a45a5403c62",
+    "id": "d09dc54e548debe9",
     "type": "split",
     "children": [
       {
-        "id": "8dcba0c931c97b7c",
+        "id": "766b7acde4720a1a",
         "type": "tabs",
         "children": [
           {
-            "id": "7955d5589f12b2f0",
+            "id": "b587be2a042a3fce",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
                 "file": "操作系统and计组/CPU.md",
-                "collapseAll": false,
-                "extraContext": false,
+                "collapseAll": true,
+                "extraContext": true,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
+                "backlinkCollapsed": true,
                 "unlinkedCollapsed": true
               }
             }
@@ -84,16 +84,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 186,
     "collapsed": true
   },
-  "active": "783d15737b426081",
+  "active": "eec990e27c51116e",
   "lastOpenFiles": [
-    "自动化运维/adb.md",
-    "自动化运维/Ansible.md",
-    "自动化运维/Prometheus.md",
-    "操作系统and计组/进程&线程.md",
+    "操作系统and计组/并发.md",
     "操作系统and计组/操作系统.md",
-    "操作系统and计组/并发.md"
+    "操作系统and计组/CPU.md",
+    "计算机网络/HTTP.md",
+    "计算机网络/TCP、IP协议栈.md",
+    "自动化运维/adb.md",
+    "计算机网络/三层网络架构.md",
+    "计算机网络/sockets.md",
+    "操作系统and计组/面试题.md",
+    "AI/机器学习.md"
   ]
 }
