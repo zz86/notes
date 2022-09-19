@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "操作系统and计组/内存.md",
+            "file": "操作系统and计组/文件系统&磁盘.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "操作系统and计组/内存.md",
+                "file": "操作系统and计组/文件系统&磁盘.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -89,8 +89,8 @@
   },
   "active": "eec990e27c51116e",
   "lastOpenFiles": [
-    "操作系统and计组/进程&线程.md",
     "操作系统and计组/内存.md",
+    "操作系统and计组/进程&线程.md",
     "操作系统and计组/操作系统.md",
     "操作系统and计组/CPU.md",
     "操作系统and计组/并发.md",
