@@ -89,15 +89,15 @@
   },
   "active": "eec990e27c51116e",
   "lastOpenFiles": [
+    "AI/机器学习概述.md",
+    "AI/深度学习.md",
+    "AI/matplotlib.md",
     "AI/PyTorch.md",
     "AI/Tensor.md",
     "AI/Numpy.md",
-    "AI/深度学习.md",
-    "AI/机器学习概述.md",
+    "自动化运维/adb.md",
+    "python/python自动化运维.md",
     "ROS2/ROS2.md",
-    "操作系统and计组/文件系统&磁盘.md",
-    "操作系统and计组/内存.md",
-    "操作系统and计组/进程&线程.md",
-    "操作系统and计组/操作系统.md"
+    "操作系统and计组/文件系统&磁盘.md"
   ]
 }
