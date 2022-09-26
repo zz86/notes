@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "AI/深度学习.md",
+            "file": "操作系统&计组/CPU.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AI/深度学习.md",
+                "file": "操作系统&计组/CPU.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "eec990e27c51116e",
   "lastOpenFiles": [
-    "AI/机器学习概述.md",
-    "AI/深度学习.md",
-    "AI/matplotlib.md",
-    "AI/PyTorch.md",
-    "AI/Tensor.md",
-    "AI/Numpy.md",
-    "自动化运维/adb.md",
-    "python/python自动化运维.md",
-    "ROS2/ROS2.md",
-    "操作系统and计组/文件系统&磁盘.md"
+    "分布式技术/CAP理论.md",
+    "服务端/nginx_web服务器.md",
+    "操作系统&计组/内存&虚拟内存.md",
+    "操作系统and计组/内存.md",
+    "操作系统&计组/面试题.md",
+    "计算机网络/三层网络架构.md",
+    "计算机网络/FTP.md",
+    "计算机网络/TCP、IP协议栈.md",
+    "计算机网络/sockets.md",
+    "计算机网络/RPC.md"
   ]
 }
