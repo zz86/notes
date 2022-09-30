@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "计算机网络/书籍推荐.md",
+            "file": "AI/AI Planning.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "计算机网络/书籍推荐.md",
+                "file": "AI/AI Planning.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "eec990e27c51116e",
   "lastOpenFiles": [
+    "AI/PDDL.md",
+    "AI/AI Planning.md",
+    "AI/PyTorch.md",
+    "AI/Tensor.md",
+    "AI/Numpy.md",
+    "AI/matplotlib.md",
+    "计算机网络/书籍推荐.md",
     "操作系统&计组/书籍推荐.md",
     "操作系统&计组/系统性能监控.md",
-    "计算机网络/性能指标与网络优化.md",
-    "操作系统&计组/进程&线程.md",
-    "计算机网络/TCP、IP协议栈.md",
-    "计算机网络/NAT.md",
-    "计算机网络/sockets套接字.md",
-    "计算机网络/网络并发IO.md",
-    "计算机网络/DNS.md",
-    "计算机网络/FTP.md"
+    "计算机网络/性能指标与网络优化.md"
   ]
 }
